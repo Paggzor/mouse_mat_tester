@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include <QGraphicsScene>
 #include <QGraphicsRectItem>
+#include <QGraphicsPathItem>
+#include <QTime>
 
 namespace Ui {
 class MainWindow;
@@ -23,10 +25,21 @@ private:
 
     QGraphicsEllipseItem *m_target;
     QGraphicsRectItem    *m_bounds;
-    QPointF m_dt;
+    QPainterPath         m_path;
+
+    double              m_percent;
+    QTime               m_lastFrame;  //Timestamp of m_percent
+    QTime               m_lastLap;    //Timestamp of last time m_percent was 0
+    QPointF             m_mouseScenePos;
+
+    int                 m_period_ms;
+
+    double m_error;
+    double m_errorMsecs;
 
 private slots:
     void advanceTime();
+    void setCursorScenePos(QPointF pos );
 
 };
 

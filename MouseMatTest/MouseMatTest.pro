@@ -13,8 +13,10 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    mouseeventfilter.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    mouseeventfilter.h
 
 FORMS    += mainwindow.ui
