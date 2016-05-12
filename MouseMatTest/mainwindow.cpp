@@ -11,9 +11,6 @@
 #include <QGraphicsSceneMouseEvent>
 
 
-
-
-
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -49,23 +46,11 @@ MainWindow::MainWindow(QWidget *parent)
     points.push_back( QPointF( 50,150 ) );
     points.push_back( QPointF(100,100 ) );
 
-    //    points.push_back( QPointF(  0,  0 ) );
-
-
     for(int t=0; t<points.size(); t+=2 )
     {
         m_path.quadTo( points.at(t), points.at((t+1) % points.size() ) );
     }
 
-//    p.lineTo( 50,50 );
-//    m_path.cubicTo(80, 0, 50, 50, 80, 80);
-//    m_path.lineTo( 50, 10 );
-//    m_path.closeSubpath();
-
-//    m_path.moveTo( 100,300 );
-//    m_path.lineTo( 150,300 );
-//    m_path.lineTo( 150,200 );
-//    m_path.closeSubpath();
 
 //    scene()->addPath( m_path );
 
